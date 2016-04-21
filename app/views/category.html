@@ -1,0 +1,28 @@
+<div class='col-md-4 col-sm-6 category-box-container' ng-repeat="data in categoryJSON track by $index">
+	<div class='category-box'> 
+		<div class="close-button" ng-click="removeCategory($index)"></div> 
+		<div class='header'>
+			<p ng-hide="edit" ng-click="edit=!edit">{{data.category}}</p>
+			<div ng-show="edit">
+				<input ng-model="data.category" class="border-less" autofocus="on">
+  				<a href="#"  ng-click="edit=!edit">DONE</a>
+  			</div>
+			<p ng-hide="editDate" class="date" ng-click="editDate=!editDate">{{data.date}}</p>
+  			<div ng-show="editDate">
+				<input ng-model="data.date" class='date border-less' datepicker autofocus="on">
+  				<a href="#"  ng-click="editDate=!editDate">DONE</a>
+  			</div>
+		</div>
+		<div class='activity-container'>
+			<form class='input-group' ng-submit = 'addNewActivity($index, activity)'>
+				<input placeholder='Add Activity' ng-model="activity" name='new-activity' class='text-field activity-input' required>
+				<button class='button add-activity'>ADD</button>
+			</form>
+			<div class="activity-list-container">
+				<span class="activity-list" ng-repeat = "li in data.activities track by $index">{{li}}
+				<span class="close-activity" ng-click="removeActivity($index,$parent.$index)"></span>
+				</li>
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,13 @@
+<div class="navbar add-category-nav">
+    <form ng-submit = "addNewCategory()" class="input-group">
+        <input id="add-category-input" placeholder="Add Category" ng-model="category" name="new-category" class="text-field" required>
+        <input placeholder = 'Add date' datepicker ng-model = 'date' name="add-date" class="text-field" type="text"required>
+        <button class="button">ADD</button>
+    </form>
+ </div>
+
+<div class="category-container" >
+	<div class="row">
+		<category></category>
+	</div>
+</div>
