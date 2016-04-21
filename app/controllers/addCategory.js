@@ -18,6 +18,7 @@ app.controller("addCategory",['$scope','$localStorage',function ($scope,$localSt
 		$scope.addNewActivity = function(index,activity){
 			$scope.categoryJSON[index].activities.push(activity);
 			$localStorage.categoryJSON = $scope.categoryJSON;
+			$('.activity-container form')[0].reset();
 		}
 		$scope.removeActivity = function(index,parent){
 			$scope.categoryJSON[parent].activities.splice(index,1);
